@@ -32,5 +32,8 @@ Required (core) user stories for your app in a bulleted list:
       
 # User Controller View
 <a href="https://imgur.com/MG2UO1m"><img src="https://i.imgur.com/MG2UO1m.png" title="source: imgur.com" /></a>
-<img src="blob:https://imgur.com/66b0682f-0474-423e-98e1-b53f638ca954" style="max-width: 100%; min-height: 471px;">
+
+# Video Walkthrough
+<img src='https://i.imgur.com/UldOLLA.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 
