@@ -1,8 +1,8 @@
 # codepath-final
 
 Short description of your app:
-"Name" is an iOS application that helps you find a parking spot for any amount of time you prefer!
-If you have a spare parking spot available, post it on "Name", and others can browse and buy that spot directly from you!
+"Parq" is an iOS application that helps you find a parking spot for any amount of time you prefer!
+If you have a spare parking spot available, post it on "Parq", and others can browse and buy that spot directly from you!
 
 
 Required (core) user stories for your app in a bulleted list:
