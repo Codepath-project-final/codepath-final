@@ -28,3 +28,8 @@ Required (core) user stories for your app in a bulleted list:
       -Your name
       -Your phone number
       -Spots you are renting
+      
+      
+      
+<img src="blob:https://imgur.com/66b0682f-0474-423e-98e1-b53f638ca954" style="max-width: 100%; min-height: 471px;">
+
