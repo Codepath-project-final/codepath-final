@@ -1,4 +1,5 @@
 # codepath-final
+# Parq
 
 Short description of your app:
 "Parq" is an iOS application that helps you find a parking spot for any amount of time you prefer!
