@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4EBB2C5C216C4E8200E1F722 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBB2C5B216C4E8200E1F722 /* DescriptionViewController.swift */; };
 		5AA2B6B3216C4C4A000F92EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2B6B2216C4C4A000F92EA /* AppDelegate.swift */; };
 		5AA2B6B5216C4C4A000F92EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2B6B4216C4C4A000F92EA /* ViewController.swift */; };
 		5AA2B6B8216C4C4A000F92EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA2B6B6216C4C4A000F92EA /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4EBB2C5B216C4E8200E1F722 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		5AA2B6AF216C4C4A000F92EA /* Parq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA2B6B2216C4C4A000F92EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AA2B6B4216C4C4A000F92EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +107,12 @@
 				5AA2B6B9216C4C4C000F92EA /* Assets.xcassets */,
 				5AA2B6BB216C4C4C000F92EA /* LaunchScreen.storyboard */,
 				5AA2B6BE216C4C4C000F92EA /* Info.plist */,
+<<<<<<< HEAD
+				4EBB2C5B216C4E8200E1F722 /* DescriptionViewController.swift */,
+||||||| merged common ancestors
+=======
 				5AA2B6E2216C5400000F92EA /* PostCell.swift */,
+>>>>>>> 3ff969bbfbe127097eceb46e76cef7e872465554
 			);
 			path = Parq;
 			sourceTree = "<group>";
@@ -259,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EBB2C5C216C4E8200E1F722 /* DescriptionViewController.swift in Sources */,
 				5AA2B6B5216C4C4A000F92EA /* ViewController.swift in Sources */,
 				5AA2B6B3216C4C4A000F92EA /* AppDelegate.swift in Sources */,
 				5AA2B6E3216C5400000F92EA /* PostCell.swift in Sources */,
