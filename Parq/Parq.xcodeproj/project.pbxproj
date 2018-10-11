@@ -15,6 +15,7 @@
 		5AA2B6BD216C4C4C000F92EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA2B6BB216C4C4C000F92EA /* LaunchScreen.storyboard */; };
 		5AA2B6C8216C4C4D000F92EA /* ParqTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2B6C7216C4C4D000F92EA /* ParqTests.swift */; };
 		5AA2B6D3216C4C4D000F92EA /* ParqUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2B6D2216C4C4D000F92EA /* ParqUITests.swift */; };
+		5AA2B6E3216C5400000F92EA /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2B6E2216C5400000F92EA /* PostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		5AA2B6CE216C4C4D000F92EA /* ParqUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParqUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA2B6D2216C4C4D000F92EA /* ParqUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParqUITests.swift; sourceTree = "<group>"; };
 		5AA2B6D4216C4C4D000F92EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AA2B6E2216C5400000F92EA /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +107,12 @@
 				5AA2B6B9216C4C4C000F92EA /* Assets.xcassets */,
 				5AA2B6BB216C4C4C000F92EA /* LaunchScreen.storyboard */,
 				5AA2B6BE216C4C4C000F92EA /* Info.plist */,
+<<<<<<< HEAD
 				4EBB2C5B216C4E8200E1F722 /* DescriptionViewController.swift */,
+||||||| merged common ancestors
+=======
+				5AA2B6E2216C5400000F92EA /* PostCell.swift */,
+>>>>>>> 3ff969bbfbe127097eceb46e76cef7e872465554
 			);
 			path = Parq;
 			sourceTree = "<group>";
@@ -262,6 +269,7 @@
 				4EBB2C5C216C4E8200E1F722 /* DescriptionViewController.swift in Sources */,
 				5AA2B6B5216C4C4A000F92EA /* ViewController.swift in Sources */,
 				5AA2B6B3216C4C4A000F92EA /* AppDelegate.swift in Sources */,
+				5AA2B6E3216C5400000F92EA /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
