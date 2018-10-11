@@ -36,7 +36,7 @@
 
 /* Begin PBXFileReference section */
 		5A0AA645216EED6E002728A4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		5A0AA647216EF1F3002728A4 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostCell.swift; path = ../PostCell.swift; sourceTree = "<group>"; };
+		5A0AA647216EF1F3002728A4 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		5AA2B6AF216C4C4A000F92EA /* Parq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA2B6B2216C4C4A000F92EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AA2B6B4216C4C4A000F92EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,14 +107,11 @@
 		5AA2B6B1216C4C4A000F92EA /* Parq */ = {
 			isa = PBXGroup;
 			children = (
-				5AA2B6BB216C4C4C000F92EA /* LaunchScreen.storyboard */,
+				5AC63E90216EF8AF00FBD73E /* Views */,
 				5AC63E8F216EF50100FBD73E /* Storyboards */,
-				5A0AA647216EF1F3002728A4 /* PostCell.swift */,
 				5AA2B6B2216C4C4A000F92EA /* AppDelegate.swift */,
-				5AA2B6B4216C4C4A000F92EA /* ViewController.swift */,
 				5AA2B6B9216C4C4C000F92EA /* Assets.xcassets */,
 				5AA2B6BE216C4C4C000F92EA /* Info.plist */,
-				5A0AA645216EED6E002728A4 /* Main.storyboard */,
 			);
 			path = Parq;
 			sourceTree = "<group>";
@@ -140,8 +137,19 @@
 		5AC63E8F216EF50100FBD73E /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				5AA2B6BB216C4C4C000F92EA /* LaunchScreen.storyboard */,
+				5A0AA645216EED6E002728A4 /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5AC63E90216EF8AF00FBD73E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A0AA647216EF1F3002728A4 /* PostCell.swift */,
+				5AA2B6B4216C4C4A000F92EA /* ViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
