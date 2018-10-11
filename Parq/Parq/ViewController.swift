@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 160
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,8 +33,9 @@ class ViewController: UIViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
-
-        
+       
+        cell.descriptionLabel.text! = "The fuck is this"
+        cell.locationLabel.text! = "mars"
         return cell
     }
 
