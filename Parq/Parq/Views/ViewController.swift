@@ -12,6 +12,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sideView: UIView!
+    @IBOutlet weak var sideViewLeadingEdge: NSLayoutConstraint!
+    
+    var sideViewDisplay = false
     
     var posts: [[String: Any]] = []
     
@@ -20,7 +24,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.rowHeight = 160
         tableView.dataSource = self
         tableView.delegate = self
+        
+        //sideView Shadow
+        sideView.layer.shadowOpacity = 1
+        sideView.layer.shadowRadius = 40
     }
+    
+    // show the sideView when press the Menu Icon
+    @IBAction func sideViewPress(_ sender: Any) {
+        if (sideViewDisplay) {
+            sideViewLeadingEdge.constant = -240
+            UIView.animate(withDuration: 0.3, animations: {
+                self.view.layoutIfNeeded()
+            })
+        } else {
+            sideViewLeadingEdge.constant = 0
+            UIView.animate(withDuration: 0.3, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
+        sideViewDisplay = !sideViewDisplay
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

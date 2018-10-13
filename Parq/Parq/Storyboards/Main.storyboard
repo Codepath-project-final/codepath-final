@@ -68,12 +68,58 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBf-Vh-2QW">
+                                <rect key="frame" x="-240" y="64" width="200" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziM-Pp-H6H">
+                                        <rect key="frame" x="20" y="50" width="138" height="42"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgw-FA-YZn">
+                                        <rect key="frame" x="20" y="142" width="119" height="42"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pvv-2N-XxY">
+                                        <rect key="frame" x="20" y="234" width="129" height="42"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Dgw-FA-YZn" firstAttribute="leading" secondItem="TBf-Vh-2QW" secondAttribute="leading" constant="20" id="5IW-H5-0CL"/>
+                                    <constraint firstItem="Pvv-2N-XxY" firstAttribute="leading" secondItem="TBf-Vh-2QW" secondAttribute="leading" constant="20" id="DfN-jJ-BF9"/>
+                                    <constraint firstItem="Dgw-FA-YZn" firstAttribute="top" secondItem="ziM-Pp-H6H" secondAttribute="bottom" constant="50" id="PEq-ai-KYf"/>
+                                    <constraint firstAttribute="width" constant="200" id="WQi-a1-DNz"/>
+                                    <constraint firstItem="ziM-Pp-H6H" firstAttribute="leading" secondItem="TBf-Vh-2QW" secondAttribute="leading" constant="20" id="Wm4-tj-MP2"/>
+                                    <constraint firstItem="ziM-Pp-H6H" firstAttribute="top" secondItem="TBf-Vh-2QW" secondAttribute="top" constant="50" id="bdB-3T-zeZ"/>
+                                    <constraint firstItem="Pvv-2N-XxY" firstAttribute="top" secondItem="Dgw-FA-YZn" secondAttribute="bottom" constant="50" id="gGh-aA-L0K"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TBf-Vh-2QW" firstAttribute="top" secondItem="s7Y-us-Yd0" secondAttribute="top" id="C1C-B4-SPT"/>
+                            <constraint firstItem="TBf-Vh-2QW" firstAttribute="leading" secondItem="s7Y-us-Yd0" secondAttribute="leading" constant="-240" id="dd8-FS-as6"/>
+                            <constraint firstItem="TBf-Vh-2QW" firstAttribute="bottom" secondItem="s7Y-us-Yd0" secondAttribute="bottom" id="qMt-YV-jcI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="s7Y-us-Yd0"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Y3K-85-wtt"/>
+                    <navigationItem key="navigationItem" id="Y3K-85-wtt">
+                        <barButtonItem key="leftBarButtonItem" title="Account" image="icons8-person_male" id="iGn-2H-EO2">
+                            <connections>
+                                <action selector="sideViewPress:" destination="vhC-CC-3PL" id="rmM-Ol-G1Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="sideView" destination="TBf-Vh-2QW" id="YhW-tK-5rK"/>
+                        <outlet property="sideViewLeadingEdge" destination="dd8-FS-as6" id="iYL-qB-yhz"/>
                         <outlet property="tableView" destination="D3F-1B-WtV" id="dP0-mX-ImA"/>
                     </connections>
                 </viewController>
@@ -304,7 +350,10 @@ San Francisco, CA 94132 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGf-zG-4jR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="655.20000000000005" y="-323.38830584707648"/>
+            <point key="canvasLocation" x="426" y="-323"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-person_male" width="24" height="24"/>
+    </resources>
 </document>
