@@ -124,6 +124,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwU-Af-s9a">
                                 <rect key="frame" x="152.5" y="617" width="70" height="30"/>
                                 <state key="normal" title="Book Now"/>
+                                <connections>
+                                    <segue destination="8Qc-tr-YJO" kind="show" id="34a-WT-j2e"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gqz-Zx-Exv">
                                 <rect key="frame" x="156.5" y="572" width="62" height="30"/>
@@ -230,6 +233,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mwb-5j-iqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3848.8000000000002" y="-323.38830584707648"/>
+        </scene>
+        <!--Confirm View Controller-->
+        <scene sceneID="Ih1-HZ-ubo">
+            <objects>
+                <viewController id="8Qc-tr-YJO" customClass="ConfirmViewController" customModule="Parq" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LCC-h7-OFO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTT-oY-iCd">
+                                <rect key="frame" x="160" y="607" width="55" height="30"/>
+                                <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="tapConfirm:" destination="8Qc-tr-YJO" eventType="touchUpInside" id="j59-vM-bfl"/>
+                                    <segue destination="3S2-UM-mHs" kind="presentation" identifier="BackToMainPage" id="FLg-Wr-wEh"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLk-IN-5Rl">
+                                <rect key="frame" x="30" y="94" width="315" height="473"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Thankyou!  
+
+
+This is your Confirmation!!! 
+
+
+Detail Address :
+1600 Holloway Ave
+San Francisco, CA 94132 
+ Phone Number:
+(415) 123-4567 
+</string>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jLk-IN-5Rl" firstAttribute="top" secondItem="wQB-yg-nBi" secondAttribute="top" constant="30" id="KDh-HU-7yU"/>
+                            <constraint firstItem="jLk-IN-5Rl" firstAttribute="leading" secondItem="wQB-yg-nBi" secondAttribute="leading" constant="30" id="bEZ-Wj-LTS"/>
+                            <constraint firstAttribute="bottom" secondItem="jLk-IN-5Rl" secondAttribute="bottom" constant="100" id="htb-Xv-ppb"/>
+                            <constraint firstItem="pTT-oY-iCd" firstAttribute="centerX" secondItem="LCC-h7-OFO" secondAttribute="centerX" id="iie-7b-bhe"/>
+                            <constraint firstItem="wQB-yg-nBi" firstAttribute="bottom" secondItem="pTT-oY-iCd" secondAttribute="bottom" constant="30" id="qr0-J5-LTg"/>
+                            <constraint firstItem="wQB-yg-nBi" firstAttribute="trailing" secondItem="jLk-IN-5Rl" secondAttribute="trailing" constant="30" id="twu-5F-J3f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wQB-yg-nBi"/>
+                    </view>
+                    <connections>
+                        <outlet property="confirmTextView" destination="jLk-IN-5Rl" id="KK4-o1-QP1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yEI-85-2Xm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3853.5999999999999" y="474.51274362818594"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ich-eb-fG2">
