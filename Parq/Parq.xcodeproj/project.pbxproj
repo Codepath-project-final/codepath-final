@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4EE228D5217012BD002CEC55 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE228D4217012BD002CEC55 /* DescriptionViewController.swift */; };
 		4EE228D7217012F0002CEC55 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE228D6217012F0002CEC55 /* PhotoCell.swift */; };
+		4EE228DA2171B995002CEC55 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE228D92171B995002CEC55 /* MessageCell.swift */; };
+		4EE228DE2171B9E7002CEC55 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE228DD2171B9E7002CEC55 /* MessageViewController.swift */; };
 		5A0AA646216EED6E002728A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0AA645216EED6E002728A4 /* Main.storyboard */; };
 		5A0AA648216EF1F3002728A4 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0AA647216EF1F3002728A4 /* PostCell.swift */; };
 		5AA2B6B3216C4C4A000F92EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2B6B2216C4C4A000F92EA /* AppDelegate.swift */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		4EE228D4217012BD002CEC55 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		4EE228D6217012F0002CEC55 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		4EE228D92171B995002CEC55 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		4EE228DD2171B9E7002CEC55 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		5A0AA645216EED6E002728A4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5A0AA647216EF1F3002728A4 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		5AA2B6AF216C4C4A000F92EA /* Parq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parq.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +93,15 @@
 			path = "Description Views";
 			sourceTree = "<group>";
 		};
+		4EE228D82171B950002CEC55 /* Message Views */ = {
+			isa = PBXGroup;
+			children = (
+				4EE228DD2171B9E7002CEC55 /* MessageViewController.swift */,
+				4EE228D92171B995002CEC55 /* MessageCell.swift */,
+			);
+			path = "Message Views";
+			sourceTree = "<group>";
+		};
 		5A0AA644216EECB3002728A4 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +135,7 @@
 			children = (
 				5AC63E90216EF8AF00FBD73E /* Views */,
 				4EE228D321701266002CEC55 /* Description Views */,
+				4EE228D82171B950002CEC55 /* Message Views */,
 				5AC63E8F216EF50100FBD73E /* Storyboards */,
 				5AA2B6B2216C4C4A000F92EA /* AppDelegate.swift */,
 				5AA2B6B9216C4C4C000F92EA /* Assets.xcassets */,
@@ -160,8 +174,8 @@
 		5AC63E90216EF8AF00FBD73E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5A0AA647216EF1F3002728A4 /* PostCell.swift */,
 				5AA2B6B4216C4C4A000F92EA /* ViewController.swift */,
+				5A0AA647216EF1F3002728A4 /* PostCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -302,6 +316,8 @@
 				4EE228D5217012BD002CEC55 /* DescriptionViewController.swift in Sources */,
 				5AA2B6B3216C4C4A000F92EA /* AppDelegate.swift in Sources */,
 				5A0AA648216EF1F3002728A4 /* PostCell.swift in Sources */,
+				4EE228DA2171B995002CEC55 /* MessageCell.swift in Sources */,
+				4EE228DE2171B9E7002CEC55 /* MessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

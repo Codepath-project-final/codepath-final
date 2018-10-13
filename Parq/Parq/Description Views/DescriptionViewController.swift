@@ -27,6 +27,7 @@ class DescriptionViewController: UIViewController, UITableViewDataSource, UITabl
     
 
     func tableView(_ photoTableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // return photo.count
         return 10
     }
     
