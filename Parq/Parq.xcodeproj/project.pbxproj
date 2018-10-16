@@ -14,6 +14,8 @@
 		4EE228E12171C1E4002CEC55 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE228E02171C1E4002CEC55 /* ConfirmViewController.swift */; };
 		5A0AA646216EED6E002728A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0AA645216EED6E002728A4 /* Main.storyboard */; };
 		5A0AA648216EF1F3002728A4 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0AA647216EF1F3002728A4 /* PostCell.swift */; };
+		5A7B1EBE21757F4E000C9B0A /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B1EBD21757F4E000C9B0A /* RegistrationViewController.swift */; };
+		5A7B1EC021758637000C9B0A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B1EBF21758637000C9B0A /* LoginViewController.swift */; };
 		5AA2B6B3216C4C4A000F92EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2B6B2216C4C4A000F92EA /* AppDelegate.swift */; };
 		5AA2B6B5216C4C4A000F92EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2B6B4216C4C4A000F92EA /* ViewController.swift */; };
 		5AA2B6BA216C4C4C000F92EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AA2B6B9216C4C4C000F92EA /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 		4EE228E02171C1E4002CEC55 /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		5A0AA645216EED6E002728A4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5A0AA647216EF1F3002728A4 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		5A7B1EBD21757F4E000C9B0A /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		5A7B1EBF21758637000C9B0A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5AA2B6AF216C4C4A000F92EA /* Parq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA2B6B2216C4C4A000F92EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AA2B6B4216C4C4A000F92EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +123,15 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		5A7B1EBC21757EE2000C9B0A /* Registration Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A7B1EBD21757F4E000C9B0A /* RegistrationViewController.swift */,
+				5A7B1EBF21758637000C9B0A /* LoginViewController.swift */,
+			);
+			path = "Registration Views";
+			sourceTree = "<group>";
+		};
 		5AA2B6A6216C4C4A000F92EA = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +156,7 @@
 		5AA2B6B1216C4C4A000F92EA /* Parq */ = {
 			isa = PBXGroup;
 			children = (
+				5A7B1EBC21757EE2000C9B0A /* Registration Views */,
 				5AC63E90216EF8AF00FBD73E /* Views */,
 				4EE228D321701266002CEC55 /* Description Views */,
 				4EE228D82171B950002CEC55 /* Message Views */,
@@ -325,10 +339,12 @@
 				5AA2B6B5216C4C4A000F92EA /* ViewController.swift in Sources */,
 				4EE228D7217012F0002CEC55 /* PhotoCell.swift in Sources */,
 				4EE228D5217012BD002CEC55 /* DescriptionViewController.swift in Sources */,
+				5A7B1EBE21757F4E000C9B0A /* RegistrationViewController.swift in Sources */,
 				4EE228E12171C1E4002CEC55 /* ConfirmViewController.swift in Sources */,
 				5AA2B6B3216C4C4A000F92EA /* AppDelegate.swift in Sources */,
 				5A0AA648216EF1F3002728A4 /* PostCell.swift in Sources */,
 				4EE228DA2171B995002CEC55 /* MessageCell.swift in Sources */,
+				5A7B1EC021758637000C9B0A /* LoginViewController.swift in Sources */,
 				4EE228DE2171B9E7002CEC55 /* MessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
