@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountViewController: UIViewController {
+class AccountViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
@@ -42,5 +42,17 @@ class AccountViewController: UIViewController {
         appDelegate?.window??.rootViewController = MainPage
     }
     
-
+    @IBAction func tapView(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
+    /*
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        return
+    }
+    */
 }
