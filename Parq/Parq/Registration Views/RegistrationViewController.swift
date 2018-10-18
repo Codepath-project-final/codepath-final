@@ -22,9 +22,9 @@ class RegistrationViewController: UIViewController {
         confirmPasswordTextField.delegate = self as? UITextFieldDelegate
         
         usernameTextField.placeholder = "Username"
-        usernameTextField.placeholder = "Email Address"
-        usernameTextField.placeholder = "Password"
-        usernameTextField.placeholder = "Confrim Password"
+        emailTextField.placeholder = "Email Address"
+        passwordTextField.placeholder = "Password"
+        confirmPasswordTextField.placeholder = "Confrim Password"
         
         // Do any additional setup after loading the view.
     }
