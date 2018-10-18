@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3S2-UM-mHs">
-
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,7 +69,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBf-Vh-2QW">
-                                <rect key="frame" x="-240" y="20" width="200" height="647"/>
+                                <rect key="frame" x="-240" y="64" width="200" height="603"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFr-z0-DeT">
                                         <rect key="frame" x="20" y="100" width="138" height="54"/>
@@ -411,10 +409,7 @@ San Francisco, CA 94132 
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTR-rE-cDG">
-
                                 <rect key="frame" x="30" y="94" width="156.5" height="21"/>
-
-
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -682,7 +677,9 @@ San Francisco, CA 94132 
         <image name="icons8-person_male" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Qi3-8s-ssC"/>
+        <segue reference="Fmo-dO-m7z"/>
         <segue reference="Cko-ju-oEN"/>
-        <segue reference="1zy-NR-roS"/>
+        <segue reference="3ho-aT-aqB"/>
     </inferredMetricsTieBreakers>
 </document>
