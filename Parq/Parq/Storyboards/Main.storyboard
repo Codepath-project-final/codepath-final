@@ -418,7 +418,7 @@ San Francisco, CA 94132 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSI-Gg-HDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="416.80000000000001" y="472.71364317841085"/>
+            <point key="canvasLocation" x="425" y="473"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="qOA-Ic-9MI">
@@ -470,7 +470,7 @@ San Francisco, CA 94132 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smk-rQ-Tco" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1151.2" y="483.50824587706148"/>
+            <point key="canvasLocation" x="1594" y="473"/>
         </scene>
     </scenes>
     <resources>
