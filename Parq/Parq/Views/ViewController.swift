@@ -65,7 +65,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
 
-
-
+    @IBAction func accountButtonPress(_ sender: Any) {
+    }
+    
+    
+    @IBAction func logoutButtonPress(_ sender: Any) {
+        //currentUser.logout
+        performSegue(withIdentifier: "LogOut", sender: self)
+    }
 }
 
