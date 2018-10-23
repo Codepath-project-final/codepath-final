@@ -12,10 +12,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var sideView: UIView!
-    @IBOutlet weak var sideViewLeadingEdge: NSLayoutConstraint!
+    @IBOutlet weak var registeredSideView: UIView!
+    @IBOutlet weak var unregisterSideView: UIView!
     
-    var sideViewDisplay = false
+    @IBOutlet weak var registeredSideViewLeadingEdge: NSLayoutConstraint!
+    @IBOutlet weak var unregisterSideViewLeadingEdge: NSLayoutConstraint!
+    
+    var registeredSideViewDisplay = false
+    var unregisterSlideViewDisplay = false
     
     var posts: [[String: Any]] = []
     
@@ -26,24 +30,45 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
         
         //sideView Shadow
-        sideView.layer.shadowOpacity = 1
-        sideView.layer.shadowRadius = 40
+        registeredSideView.layer.shadowOpacity = 1
+        registeredSideView.layer.shadowRadius = 30
+        unregisterSideView.layer.shadowOpacity = 1
+        unregisterSideView.layer.shadowRadius = 30
     }
     
     // show the sideView when press the Menu Icon
     @IBAction func sideViewPress(_ sender: Any) {
-        if (sideViewDisplay) {
-            sideViewLeadingEdge.constant = -240
-            UIView.animate(withDuration: 0.3, animations: {
-                self.view.layoutIfNeeded()
-            })
-        } else {
-            sideViewLeadingEdge.constant = 0
-            UIView.animate(withDuration: 0.3, animations: {
-                self.view.layoutIfNeeded()
-            })
-        }
-        sideViewDisplay = !sideViewDisplay
+        // if login users press
+        //if user == login {
+            if (registeredSideViewDisplay) {
+                registeredSideViewLeadingEdge.constant = -240
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.view.layoutIfNeeded()
+                })
+            } else {
+                registeredSideViewLeadingEdge.constant = 0
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.view.layoutIfNeeded()
+                })
+            }
+            registeredSideViewDisplay = !registeredSideViewDisplay
+        //}
+        
+        // if unlogin users press
+        //else {
+            if (unregisterSlideViewDisplay) {
+                unregisterSideViewLeadingEdge.constant = -240
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.view.layoutIfNeeded()
+                })
+            } else {
+                unregisterSideViewLeadingEdge.constant = 0
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.view.layoutIfNeeded()
+                })
+            }
+            unregisterSlideViewDisplay = !unregisterSlideViewDisplay
+        //}
     }
     
 
