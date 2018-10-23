@@ -13,14 +13,6 @@
     {
       "idiom" : "iphone",
       "size" : "29x29",
-<<<<<<< HEAD
-=======
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "iphone",
-      "size" : "29x29",
->>>>>>> 00f080b00a2262f01eecf999fe1c43031f6214b9
       "scale" : "2x"
     },
     {
@@ -40,24 +32,7 @@
     },
     {
       "idiom" : "iphone",
-<<<<<<< HEAD
-=======
-      "size" : "57x57",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "iphone",
-      "size" : "57x57",
-      "scale" : "2x"
-    },
-    {
->>>>>>> 00f080b00a2262f01eecf999fe1c43031f6214b9
       "size" : "60x60",
-<<<<<<< HEAD
-=======
-      "idiom" : "iphone",
-      "filename" : "120x.png",
->>>>>>> 54337b29b09a2916c8612c76eabe95c0f5ea56f2
       "scale" : "2x"
     },
     {
