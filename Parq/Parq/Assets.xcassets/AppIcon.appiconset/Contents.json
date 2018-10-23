@@ -31,14 +31,6 @@
       "scale" : "3x"
     },
     {
-<<<<<<< HEAD
-      "idiom" : "iphone",
-      "size" : "60x60",
-=======
-      "size" : "60x60",
-      "idiom" : "iphone",
-      "filename" : "120x.png",
->>>>>>> 65529d39f296fc19b1b1b7b5a7f03fb43344c0b6
       "scale" : "2x"
     },
     {
