@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3S2-UM-mHs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3S2-UM-mHs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -149,7 +149,7 @@
                         <viewLayoutGuide key="safeArea" id="s7Y-us-Yd0"/>
                     </view>
                     <navigationItem key="navigationItem" id="Y3K-85-wtt">
-                        <barButtonItem key="leftBarButtonItem" title="Account" image="icons8-person_male" id="iGn-2H-EO2">
+                        <barButtonItem key="leftBarButtonItem" title="Account" image="icons8-menu-1" id="iGn-2H-EO2">
                             <connections>
                                 <action selector="sideViewPress:" destination="vhC-CC-3PL" id="rmM-Ol-G1Z"/>
                             </connections>
@@ -409,7 +409,7 @@ San Francisco, CA 94132 
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTR-rE-cDG">
-                                <rect key="frame" x="30" y="94" width="156.5" height="21"/>
+                                <rect key="frame" x="30" y="94" width="157" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -674,7 +674,7 @@ San Francisco, CA 94132 
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-person_male" width="24" height="24"/>
+        <image name="icons8-menu-1" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Qi3-8s-ssC"/>
