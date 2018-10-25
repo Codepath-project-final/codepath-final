@@ -33,53 +33,55 @@ class RegistrationViewController: UIViewController {
         confirmPasswordTextField.placeholder = "Confrim Password"
         firstNameTextField.placeholder = "First Name"
         lastNameTextField.placeholder = "Last Name"
+        print("got here 1")
         
         // Do any additional setup after loading the view.
+    }
+    func registerUser (_ LastName: String, _ FirstName: String, _ username: String, _ password: String, _ email: String!) -> Bool {
+        print("got here");
+        
+        
+        // URL for making POST request to the heroku server
+        
+        let url = URL(string: "https://parkistan.herokuapp.com/register")!
+        
+        var request = URLRequest(url:url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 10)
+        
+        // define HTTP POST method
+        request.httpMethod = "POST"
+        
+        // send data as httpBody encoded in utf format
+        
+        
+        request.httpBody = "username=\(usernameTextField)&password=\(passwordTextField)&email=\(emailTextField)&FirstName=\(firstNameTextField)&LastName=\(lastNameTextField)".data(using: .utf8)
+        
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        
+        let task = session.dataTask(with: request) {
+            
+            (data, response, error) in
+            
+            if let error = error {
+                
+                print(error.localizedDescription)
+                
+            }
+                
+            else if let data = data {
+                
+                let responseMessage = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
+                
+                
+            }
+        }
+        return false;
     }
     
 
     
     @IBAction func register(_ sender: Any) {
-        func registerUser (_ LastName: String, _ FirstName: String, _ username: String, _ password: String, _ email: String!) -> Bool {
-            
-            
-            // URL for making POST request to the heroku server
-            
-            let url = URL(string: "https://parkistan.herokuapp.com/register")!
-            
-            var request = URLRequest(url:url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 10)
-            
-            // define HTTP POST method
-            request.httpMethod = "POST"
-            
-            // send data as httpBody encoded in utf format
-            
-            
-            request.httpBody = "username=\(usernameTextField)&password=\(passwordTextField)&email=\(emailTextField)&FirstName=\(firstNameTextField)&LastName=\(lastNameTextField)".data(using: .utf8)
-            
-            let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-            
-            let task = session.dataTask(with: request) {
-                
-                (data, response, error) in
-                
-                if let error = error {
-                    
-                    print(error.localizedDescription)
-                    
-                }
-                    
-                else if let data = data {
-                    
-                    let responseMessage = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
-                    
-                    
-                }
-            }
-            return false;
+        registerUser(lastNameTextField.text!, firstNameTextField.text!, usernameTextField.text!, passwordTextField.text!, emailTextField.text!)
         }
-
-    }
     
     
 
@@ -87,16 +89,5 @@ class RegistrationViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
