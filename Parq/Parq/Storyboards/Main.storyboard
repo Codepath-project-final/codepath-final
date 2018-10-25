@@ -377,7 +377,7 @@ San Francisco, CA 94132 
         <!--Navigation Controller-->
         <scene sceneID="ich-eb-fG2">
             <objects>
-                <navigationController restorationIdentifier="MainControlView" storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="3S2-UM-mHs" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="MainControlView" storyboardIdentifier="MainControlView" automaticallyAdjustsScrollViewInsets="NO" id="3S2-UM-mHs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zHA-Xc-XVx">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class RegistrationViewController: UIViewController {
 
@@ -37,50 +38,23 @@ class RegistrationViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    func registerUser (_ LastName: String, _ FirstName: String, _ username: String, _ password: String, _ email: String!) -> Bool {
-        print("got here");
-        
-        
-        // URL for making POST request to the heroku server
-        
-        let url = URL(string: "https://parkistan.herokuapp.com/register")!
-        
-        var request = URLRequest(url:url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 10)
-        
-        // define HTTP POST method
-        request.httpMethod = "POST"
-        
-        // send data as httpBody encoded in utf format
-        
-        
-        request.httpBody = "username=\(usernameTextField)&password=\(passwordTextField)&email=\(emailTextField)&FirstName=\(firstNameTextField)&LastName=\(lastNameTextField)".data(using: .utf8)
-        
-        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-        
-        let task = session.dataTask(with: request) {
-            
-            (data, response, error) in
-            
-            if let error = error {
-                
-                print(error.localizedDescription)
-                
-            }
-                
-            else if let data = data {
-                
-                let responseMessage = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
-                
-                
-            }
-        }
-        return false;
-    }
-    
 
     
     @IBAction func register(_ sender: Any) {
-        registerUser(lastNameTextField.text!, firstNameTextField.text!, usernameTextField.text!, passwordTextField.text!, emailTextField.text!)
+        let newUser = PFUser()
+        
+        newUser.username = usernameTextField.text
+        newUser.password = passwordTextField.text
+        
+        newUser.signUpInBackground { (success: Bool
+            , error: Error?) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("User Registered successfully")
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            }
+        }
         }
     
     
