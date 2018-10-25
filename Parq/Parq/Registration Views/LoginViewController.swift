@@ -30,15 +30,8 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func loginUser (_ username: String, _ password: String) -> Bool {
-        let username = usernameTextField.text!
-        let password = passwordTextField.text!
-        
-        if(username.isEmpty || password.isEmpty) {
-            
-            //self.errorLabel.text = "*Please provide usernname and pasword"
-        }
-        
+    
+    @IBAction func login(_ sender: Any) {
         PFUser.logInWithUsername(inBackground: usernameTextField.text!, password: passwordTextField.text!) { (user: PFUser?
             , error: Error?) in
             if user != nil {
@@ -46,11 +39,6 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
         }
-        return false
-    }
-    
-    @IBAction func login(_ sender: Any) {
-        loginUser(usernameTextField.text!, passwordTextField.text!)
     }
     
     

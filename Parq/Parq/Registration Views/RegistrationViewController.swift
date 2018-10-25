@@ -55,7 +55,7 @@ class RegistrationViewController: UIViewController {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
         }
-        }
+    }
     
     
 

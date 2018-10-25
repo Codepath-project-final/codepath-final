@@ -596,7 +596,6 @@ San Francisco, CA 94132 
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="register:" destination="Q80-Lr-tSD" eventType="touchUpInside" id="EHi-bn-OGJ"/>
-                                    <segue destination="vhC-CC-3PL" kind="show" id="xAI-0A-Zys"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1l8-73-gQo">
@@ -625,6 +624,7 @@ San Francisco, CA 94132 
                         <outlet property="lastNameTextField" destination="cIy-D0-LXA" id="VPn-Ac-I0U"/>
                         <outlet property="passwordTextField" destination="G7P-Db-BhA" id="yma-bF-Uui"/>
                         <outlet property="usernameTextField" destination="RGy-A8-Dqd" id="kzH-2V-fh4"/>
+                        <segue destination="3S2-UM-mHs" kind="presentation" identifier="loginSegue" id="p7J-gs-G5l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSI-Gg-HDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -683,6 +683,7 @@ San Francisco, CA 94132 
                     <connections>
                         <outlet property="passwordTextField" destination="iFL-un-be7" id="szW-PJ-Hrn"/>
                         <outlet property="usernameTextField" destination="1iN-Qf-6ij" id="eS5-Oz-ZA0"/>
+                        <segue destination="3S2-UM-mHs" kind="presentation" identifier="loginSegue" id="GNR-zL-Gh9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smk-rQ-Tco" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -696,7 +697,6 @@ San Francisco, CA 94132 
     <inferredMetricsTieBreakers>
         <segue reference="X2g-wh-qIu"/>
         <segue reference="kaU-OY-i3z"/>
-        <segue reference="Cko-ju-oEN"/>
-        <segue reference="3ho-aT-aqB"/>
+        <segue reference="p7J-gs-G5l"/>
     </inferredMetricsTieBreakers>
 </document>
