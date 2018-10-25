@@ -665,6 +665,7 @@ San Francisco, CA 94132 
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
+                                    <action selector="login:" destination="alk-dv-QZI" eventType="touchUpInside" id="6bT-y4-aws"/>
                                     <segue destination="vhC-CC-3PL" kind="show" id="1zy-NR-roS"/>
                                 </connections>
                             </button>
@@ -695,8 +696,8 @@ San Francisco, CA 94132 
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="X2g-wh-qIu"/>
-        <segue reference="Fmo-dO-m7z"/>
+        <segue reference="kaU-OY-i3z"/>
         <segue reference="Cko-ju-oEN"/>
-        <segue reference="xAI-0A-Zys"/>
+        <segue reference="1zy-NR-roS"/>
     </inferredMetricsTieBreakers>
 </document>

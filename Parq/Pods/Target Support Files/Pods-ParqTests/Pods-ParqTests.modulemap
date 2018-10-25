@@ -1,0 +1,6 @@
+framework module Pods_ParqTests {
+  umbrella header "Pods-ParqTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

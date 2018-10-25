@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Parse
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.delegate = self as? UITextFieldDelegate
@@ -28,7 +30,32 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func login(_ sender: Any) {
+        func loginUser (_ username: String, _ password: String) -> Bool {
 
+            let username = usernameTextField.text!
+            let password = passwordTextField.text!
+            
+            if(username.isEmpty || password.isEmpty) {
+                
+                //self.errorLabel.text = "*Please provide usernname and pasword"
+            }
+            
+            PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
+                if let error = error {
+                    print("User log in failed: \(error.localizedDescription)")
+                } else {
+                    //self.errorLabel.text = ""
+                    print("User logged in successfully")
+                    // display view controller that needs to shown after successful login
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                    
+                }
+            }
+            return false
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
