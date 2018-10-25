@@ -30,31 +30,29 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func login(_ sender: Any) {
-        func loginUser (_ username: String, _ password: String) -> Bool {
-
-            let username = usernameTextField.text!
-            let password = passwordTextField.text!
+    func loginUser (_ username: String, _ password: String) -> Bool {
+        let username = usernameTextField.text!
+        let password = passwordTextField.text!
+        
+        if(username.isEmpty || password.isEmpty) {
             
-            if(username.isEmpty || password.isEmpty) {
-                
-                //self.errorLabel.text = "*Please provide usernname and pasword"
-            }
-            
-            PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
-                if let error = error {
-                    print("User log in failed: \(error.localizedDescription)")
-                } else {
-                    //self.errorLabel.text = ""
-                    print("User logged in successfully")
-                    // display view controller that needs to shown after successful login
-                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
-                    
-                }
-            }
-            return false
+            //self.errorLabel.text = "*Please provide usernname and pasword"
         }
+        
+        PFUser.logInWithUsername(inBackground: usernameTextField.text!, password: passwordTextField.text!) { (user: PFUser?
+            , error: Error?) in
+            if user != nil {
+                print("Loged in Success!")
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            }
+        }
+        return false
     }
+    
+    @IBAction func login(_ sender: Any) {
+        loginUser(usernameTextField.text!, passwordTextField.text!)
+    }
+    
     
     /*
     // MARK: - Navigation
