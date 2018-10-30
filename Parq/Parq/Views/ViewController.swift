@@ -25,6 +25,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loginUser("ramesh", "khan")
+        //print("here")
         tableView.rowHeight = 160
         tableView.dataSource = self
         tableView.delegate = self
@@ -97,6 +99,42 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func logoutButtonPress(_ sender: Any) {
         //currentUser.logout
         performSegue(withIdentifier: "LogOut", sender: self)
+    }
+    
+    
+    func loginUser(_ username: String!, _ password: String!) {
+        
+        let url = URL(string: "https://parkistan.herokuapp.com/login")!
+        
+        var request = URLRequest(url:url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 10)
+        request.httpMethod = "POST"
+        let postString = "username=\(username!)&password=\(password!)"
+        request.httpBody = postString.data(using: .utf8)
+        
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        
+        let task = session.dataTask(with: request) {
+            
+            (data, response, error) in
+            
+            if let error = error {
+                
+                print(error.localizedDescription)
+            }
+            
+            if let data = data {
+                
+                let responseMessage = try! JSONSerialization.jsonObject(with: data, options: []) as! [String:String]
+                let status = (responseMessage["status"]) as! String
+                if status == "success" {
+                    print ("success")
+                }
+            }
+            
+            
+        }
+        
+        task.resume()
     }
 }
 

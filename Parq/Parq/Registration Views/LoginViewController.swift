@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
@@ -32,14 +31,53 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func login(_ sender: Any) {
-        PFUser.logInWithUsername(inBackground: usernameTextField.text!, password: passwordTextField.text!) { (user: PFUser?
-            , error: Error?) in
-            if user != nil {
-                print("Loged in Success!")
-                self.performSegue(withIdentifier: "loginSegue", sender: nil)
-            }
-        }
+//        PFUser.logInWithUsername(inBackground: usernameTextField.text!, password: passwordTextField.text!) { (user: PFUser?
+//            , error: Error?) in
+//            if user != nil {
+//                print("Loged in Success!")
+//                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+//            }
+//        }
+        
+        loginUser(usernameTextField.text, passwordTextField.text)
+        
     }
+    
+    func loginUser(_ username: String!, _ password: String!) {
+        
+        let url = URL(string: "https://parkistan.herokuapp.com/login")!
+        
+        var request = URLRequest(url:url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 10)
+        request.httpMethod = "POST"
+        let postString = "username=\(username!)&password=\(password!)"
+        request.httpBody = postString.data(using: .utf8)
+        
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        
+        let task = session.dataTask(with: request) {
+            
+            (data, response, error) in
+            
+            if let error = error {
+                
+                print(error.localizedDescription)
+            }
+            
+            if let data = data {
+                
+                let responseMessage = try! JSONSerialization.jsonObject(with: data, options: []) as! [String:String]
+                let status = (responseMessage["status"]) as! String
+                if status == "success" {
+                    print ("success")
+                }
+            }
+            
+            
+        }
+        
+        task.resume()
+    }
+    
     
     
     /*
