@@ -20,26 +20,28 @@ class LoginViewController: UIViewController {
         
         usernameTextField.placeholder = "Username"
         passwordTextField.placeholder = "Password"
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
     @IBAction func login(_ sender: Any) {
-//        PFUser.logInWithUsername(inBackground: usernameTextField.text!, password: passwordTextField.text!) { (user: PFUser?
-//            , error: Error?) in
-//            if user != nil {
-//                print("Loged in Success!")
-//                self.performSegue(withIdentifier: "loginSegue", sender: nil)
-//            }
-//        }
         
-        loginUser(usernameTextField.text, passwordTextField.text)
+        if usernameTextField.text == "" || passwordTextField.text == ""{
+            let alertController = UIAlertController(title: "Login Fail", message:
+                "Username or Password Missing", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+            
+        else{
+            loginUser(usernameTextField.text, passwordTextField.text)
+        }
         
     }
     
@@ -58,11 +60,6 @@ class LoginViewController: UIViewController {
             
             (data, response, error) in
             
-            if let error = error {
-                
-                print(error.localizedDescription)
-            }
-            
             if let data = data {
                 
                 let responseMessage = try! JSONSerialization.jsonObject(with: data, options: []) as! [String:String]
@@ -70,24 +67,33 @@ class LoginViewController: UIViewController {
                 if status == "success" {
                     print ("success")
                 }
+                else{
+                    print ("denied")
+                    let alertController = UIAlertController(title: "Login Fail", message:
+                        "Username or Password Missing", preferredStyle: UIAlertControllerStyle.alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }
+            
+            
             
             
         }
         
         task.resume()
-    }
-    
-    
-    
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
+
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destinationViewController.
+ // Pass the selected object to the new view controller.
+ }
+ */
 }
