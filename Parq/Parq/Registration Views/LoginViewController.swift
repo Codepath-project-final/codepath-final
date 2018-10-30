@@ -65,6 +65,7 @@ class LoginViewController: UIViewController {
                 let responseMessage = try! JSONSerialization.jsonObject(with: data, options: []) as! [String:String]
                 let status = (responseMessage["status"]) as! String
                 if status == "success" {
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
                     print ("success")
                 }
                 else{
