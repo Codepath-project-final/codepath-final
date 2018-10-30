@@ -624,7 +624,7 @@ San Francisco, CA 94132 
                         <outlet property="lastNameTextField" destination="cIy-D0-LXA" id="VPn-Ac-I0U"/>
                         <outlet property="passwordTextField" destination="G7P-Db-BhA" id="yma-bF-Uui"/>
                         <outlet property="usernameTextField" destination="RGy-A8-Dqd" id="kzH-2V-fh4"/>
-                        <segue destination="3S2-UM-mHs" kind="presentation" identifier="loginSegue" id="p7J-gs-G5l"/>
+                        <segue destination="3S2-UM-mHs" kind="presentation" identifier="registerSegue" id="p7J-gs-G5l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSI-Gg-HDy" userLabel="First Responder" sceneMemberID="firstResponder"/>

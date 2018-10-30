@@ -55,7 +55,36 @@ class RegistrationViewController: UIViewController {
 //            }
 //        }
         
-        registerUser(usernameTextField.text, passwordTextField.text, firstNameTextField.text, lastNameTextField.text, emailTextField.text)
+        
+        if ((usernameTextField.text == "") || (passwordTextField.text == "") || (firstNameTextField.text == "") || (lastNameTextField.text == "") || (emailTextField.text == "")) {
+            let alertController = UIAlertController(title: "Register Fail", message: "Information missing", preferredStyle: .alert)
+            
+            present(alertController, animated: true) {
+                let OKAction = UIAlertAction(title: "Dismiss", style: .default) { (action) in
+                }
+                alertController.addAction(OKAction)
+            }
+
+        } else if usernameTextField.text == usernameTextField.text {
+            let alertController = UIAlertController(title: "Register Fail", message: "User Exist", preferredStyle: .alert)
+            
+            present(alertController, animated: true) {
+                let OKAction = UIAlertAction(title: "Dismiss", style: .default) { (action) in
+                }
+                alertController.addAction(OKAction)
+            }
+        } else if (confirmPasswordTextField.text != passwordTextField.text) {
+            let alertController = UIAlertController(title: "Register Fail", message: "Password not Match", preferredStyle: .alert)
+            
+            present(alertController, animated: true) {
+                let OKAction = UIAlertAction(title: "Dismiss", style: .default) { (action) in
+                }
+                alertController.addAction(OKAction)
+            }
+        } else {
+            registerUser(usernameTextField.text, passwordTextField.text, firstNameTextField.text, lastNameTextField.text, emailTextField.text)
+            self.performSegue(withIdentifier: "registerSegue", sender: nil)
+        }
     }
     
     func registerUser(_ username: String!, _ password: String!, _ firstname: String!, _ lastname: String!, _ email: String!) {
