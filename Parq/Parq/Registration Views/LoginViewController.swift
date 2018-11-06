@@ -13,6 +13,8 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    static var isLoggedIn = false;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.delegate = self as? UITextFieldDelegate
@@ -65,13 +67,15 @@ class LoginViewController: UIViewController {
                 let responseMessage = try! JSONSerialization.jsonObject(with: data, options: []) as! [String:String]
                 let status = (responseMessage["status"]) as! String
                 if status == "success" {
+                    LoginViewController.isLoggedIn = true;
                     self.performSegue(withIdentifier: "loginSegue", sender: nil)
                     print ("success")
+                    
                 }
                 else{
                     print ("denied")
                     let alertController = UIAlertController(title: "Login Fail", message:
-                        "Username or Password Missing", preferredStyle: UIAlertControllerStyle.alert)
+                        "Username or Password Incorrect", preferredStyle: UIAlertControllerStyle.alert)
                     alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
                     
                     self.present(alertController, animated: true, completion: nil)

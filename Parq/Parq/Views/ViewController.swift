@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var registeredSideView: UIView!
     @IBOutlet weak var unregisterSideView: UIView!
-    
     @IBOutlet weak var registeredSideViewLeadingEdge: NSLayoutConstraint!
     @IBOutlet weak var unregisterSideViewLeadingEdge: NSLayoutConstraint!
     
@@ -42,6 +41,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func sideViewPress(_ sender: Any) {
         // if login users press
         //if user == login {
+        print(LoginViewController.isLoggedIn)
+        if LoginViewController.isLoggedIn{
             if (registeredSideViewDisplay) {
                 registeredSideViewLeadingEdge.constant = -240
                 UIView.animate(withDuration: 0.3, animations: {
@@ -54,10 +55,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 })
             }
             registeredSideViewDisplay = !registeredSideViewDisplay
-        //}
+        }
         
         // if unlogin users press
-        //else {
+        else {
             if (unregisterSlideViewDisplay) {
                 unregisterSideViewLeadingEdge.constant = -240
                 UIView.animate(withDuration: 0.3, animations: {
@@ -70,7 +71,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 })
             }
             unregisterSlideViewDisplay = !unregisterSlideViewDisplay
-        //}
+        }
     }
     
 
