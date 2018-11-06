@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E94064421914811009A7364 /* newPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94064321914811009A7364 /* newPostViewController.swift */; };
 		4EBCB39C2175814B00B0E06D /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBCB39B2175814B00B0E06D /* AccountViewController.swift */; };
 		4EE228D5217012BD002CEC55 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE228D4217012BD002CEC55 /* DescriptionViewController.swift */; };
 		4EE228D7217012F0002CEC55 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE228D6217012F0002CEC55 /* PhotoCell.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E94064321914811009A7364 /* newPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newPostViewController.swift; sourceTree = "<group>"; };
 		4EBCB39B2175814B00B0E06D /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		4EE228D4217012BD002CEC55 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		4EE228D6217012F0002CEC55 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E940642219147EB009A7364 /* New Post Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E94064321914811009A7364 /* newPostViewController.swift */,
+			);
+			path = "New Post Views";
+			sourceTree = "<group>";
+		};
 		4EBCB39A2175812100B0E06D /* Account Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +176,7 @@
 		5AA2B6B1216C4C4A000F92EA /* Parq */ = {
 			isa = PBXGroup;
 			children = (
+				4E940642219147EB009A7364 /* New Post Views */,
 				5A7B1EBC21757EE2000C9B0A /* Registration Views */,
 				5AC63E90216EF8AF00FBD73E /* Views */,
 				4EBCB39A2175812100B0E06D /* Account Views */,
@@ -348,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AA2B6B5216C4C4A000F92EA /* ViewController.swift in Sources */,
+				4E94064421914811009A7364 /* newPostViewController.swift in Sources */,
 				4EE228D7217012F0002CEC55 /* PhotoCell.swift in Sources */,
 				4EE228D5217012BD002CEC55 /* DescriptionViewController.swift in Sources */,
 				5A7B1EBE21757F4E000C9B0A /* RegistrationViewController.swift in Sources */,

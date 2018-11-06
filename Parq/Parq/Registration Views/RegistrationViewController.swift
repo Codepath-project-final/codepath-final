@@ -66,7 +66,11 @@ class RegistrationViewController: UIViewController {
 
 //        } else if usernameTextField.text == usernameTextField.text {
 //            let alertController = UIAlertController(title: "Register Fail", message: "User Exist", preferredStyle: .alert)
+<<<<<<< HEAD
 //
+=======
+//            
+>>>>>>> 759c0842606fde0627f8861d8ee8966d6ebf2985
 //            present(alertController, animated: true) {
 //                let OKAction = UIAlertAction(title: "Dismiss", style: .default) { (action) in
 //                }
