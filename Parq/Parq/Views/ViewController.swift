@@ -98,7 +98,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     @IBAction func logoutButtonPress(_ sender: Any) {
-        //currentUser.logout
+        LoginViewController.isLoggedIn = false;
         performSegue(withIdentifier: "LogOut", sender: self)
     }
     
