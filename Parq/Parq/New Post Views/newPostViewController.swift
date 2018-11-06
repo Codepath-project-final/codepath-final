@@ -10,13 +10,20 @@ import UIKit
 
 class newPostViewController: UIViewController {
 
+    @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var postDescripionLabel: UITextField!
+    @IBOutlet weak var postLocationLabel: UITextField!
+    @IBOutlet weak var postPriceLabel: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func postImageButton(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
