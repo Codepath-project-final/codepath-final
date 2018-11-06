@@ -65,14 +65,14 @@ class RegistrationViewController: UIViewController {
                 alertController.addAction(OKAction)
             }
 
-        } else if usernameTextField.text == usernameTextField.text {
-            let alertController = UIAlertController(title: "Register Fail", message: "User Exist", preferredStyle: .alert)
-            
-            present(alertController, animated: true) {
-                let OKAction = UIAlertAction(title: "Dismiss", style: .default) { (action) in
-                }
-                alertController.addAction(OKAction)
-            }
+//        } else if usernameTextField.text == usernameTextField.text {
+//            let alertController = UIAlertController(title: "Register Fail", message: "User Exist", preferredStyle: .alert)
+//            
+//            present(alertController, animated: true) {
+//                let OKAction = UIAlertAction(title: "Dismiss", style: .default) { (action) in
+//                }
+//                alertController.addAction(OKAction)
+//            }
         } else if (confirmPasswordTextField.text != passwordTextField.text) {
             let alertController = UIAlertController(title: "Register Fail", message: "Password not Match", preferredStyle: .alert)
             

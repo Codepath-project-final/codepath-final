@@ -74,6 +74,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    @IBAction func newPostPress(_ sender: Any) {
+        if (LoginViewController.isLoggedIn) {
+            performSegue(withIdentifier: "newPost", sender: self)
+        } else {
+            performSegue(withIdentifier: "registrationView", sender: self)
+        }
+    }
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
