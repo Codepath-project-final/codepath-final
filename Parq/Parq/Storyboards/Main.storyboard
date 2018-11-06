@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3S2-UM-mHs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3S2-UM-mHs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -346,7 +346,7 @@
                                                 <action selector="cancelButtonPress:" destination="L7p-BC-DJQ" id="S2Z-rG-UiA"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Share" id="0Wk-lZ-LwI">
+                                        <barButtonItem key="rightBarButtonItem" title="Post" id="0Wk-lZ-LwI">
                                             <connections>
                                                 <action selector="shareButtonPress:" destination="L7p-BC-DJQ" id="dQr-Wz-wOk"/>
                                             </connections>
@@ -354,44 +354,81 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IzC-pO-oOm">
-                                <rect key="frame" x="42" y="86" width="291" height="148"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IzC-pO-oOm">
+                                <rect key="frame" x="30" y="94" width="315" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="8R7-vF-yIC"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFb-JZ-dzR">
-                                <rect key="frame" x="145" y="242" width="84" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFb-JZ-dzR">
+                                <rect key="frame" x="130" y="254" width="115" height="30"/>
                                 <state key="normal" title="Add a Photo"/>
                                 <connections>
                                     <action selector="postImageButton:" destination="L7p-BC-DJQ" eventType="touchUpInside" id="TeN-FE-wMp"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wb9-AJ-v32">
-                                <rect key="frame" x="16" y="318" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter new post description here:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wb9-AJ-v32">
+                                <rect key="frame" x="30" y="328" width="315" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gav-7o-gS8">
-                                <rect key="frame" x="16" y="378" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter new post location here:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gav-7o-gS8">
+                                <rect key="frame" x="30" y="422" width="315" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R9j-N5-gEa">
-                                <rect key="frame" x="16" y="445" width="149" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQG-9n-xTL">
+                                <rect key="frame" x="30" y="294" width="115" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMZ-Js-qCs">
+                                <rect key="frame" x="30" y="388" width="88" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71V-9y-fI1">
+                                <rect key="frame" x="30" y="482" width="55" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter new post price here:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R9j-N5-gEa">
+                                <rect key="frame" x="30" y="516" width="315" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="dxe-O0-OS2" firstAttribute="trailing" secondItem="Gav-7o-gS8" secondAttribute="trailing" constant="30" id="3Px-0j-BZe"/>
+                            <constraint firstItem="R9j-N5-gEa" firstAttribute="top" secondItem="71V-9y-fI1" secondAttribute="bottom" constant="10" id="3Xy-CO-7h3"/>
                             <constraint firstItem="5ws-Mm-STE" firstAttribute="trailing" secondItem="dxe-O0-OS2" secondAttribute="trailing" id="3wU-U1-kNC"/>
+                            <constraint firstItem="dxe-O0-OS2" firstAttribute="trailing" secondItem="Wb9-AJ-v32" secondAttribute="trailing" constant="30" id="7rZ-f8-hTc"/>
+                            <constraint firstItem="jQG-9n-xTL" firstAttribute="top" secondItem="IzC-pO-oOm" secondAttribute="bottom" constant="50" id="8Ct-ti-HPX"/>
+                            <constraint firstItem="dFb-JZ-dzR" firstAttribute="leading" secondItem="dxe-O0-OS2" secondAttribute="leading" constant="130" id="9T6-bC-IlR"/>
+                            <constraint firstItem="71V-9y-fI1" firstAttribute="top" secondItem="Gav-7o-gS8" secondAttribute="bottom" constant="30" id="J3l-TQ-SWU"/>
+                            <constraint firstItem="IzC-pO-oOm" firstAttribute="leading" secondItem="dxe-O0-OS2" secondAttribute="leading" constant="30" id="Ju3-bf-oaQ"/>
+                            <constraint firstItem="Gav-7o-gS8" firstAttribute="top" secondItem="QMZ-Js-qCs" secondAttribute="bottom" constant="10" id="LbY-F0-iTo"/>
+                            <constraint firstItem="Gav-7o-gS8" firstAttribute="leading" secondItem="dxe-O0-OS2" secondAttribute="leading" constant="30" id="Nn1-sG-sTR"/>
                             <constraint firstItem="5ws-Mm-STE" firstAttribute="leading" secondItem="dxe-O0-OS2" secondAttribute="leading" id="acg-X4-01E"/>
+                            <constraint firstItem="IzC-pO-oOm" firstAttribute="top" secondItem="5ws-Mm-STE" secondAttribute="bottom" constant="30" id="aha-qm-Pnr"/>
+                            <constraint firstItem="QMZ-Js-qCs" firstAttribute="leading" secondItem="dxe-O0-OS2" secondAttribute="leading" constant="30" id="aoy-ww-a4W"/>
+                            <constraint firstItem="dxe-O0-OS2" firstAttribute="trailing" secondItem="IzC-pO-oOm" secondAttribute="trailing" constant="30" id="b5e-i3-hOx"/>
+                            <constraint firstItem="jQG-9n-xTL" firstAttribute="leading" secondItem="dxe-O0-OS2" secondAttribute="leading" constant="30" id="hBV-3m-PdA"/>
+                            <constraint firstItem="dxe-O0-OS2" firstAttribute="trailing" secondItem="R9j-N5-gEa" secondAttribute="trailing" constant="30" id="hah-AG-PsI"/>
+                            <constraint firstItem="Wb9-AJ-v32" firstAttribute="top" secondItem="jQG-9n-xTL" secondAttribute="bottom" constant="10" id="ie7-FF-dj6"/>
+                            <constraint firstItem="dxe-O0-OS2" firstAttribute="trailing" secondItem="dFb-JZ-dzR" secondAttribute="trailing" constant="130" id="ivI-HB-uMu"/>
+                            <constraint firstItem="R9j-N5-gEa" firstAttribute="leading" secondItem="dxe-O0-OS2" secondAttribute="leading" constant="30" id="pFs-sq-7FP"/>
+                            <constraint firstItem="QMZ-Js-qCs" firstAttribute="top" secondItem="Wb9-AJ-v32" secondAttribute="bottom" constant="30" id="sOU-Pi-iQz"/>
+                            <constraint firstItem="Wb9-AJ-v32" firstAttribute="leading" secondItem="dxe-O0-OS2" secondAttribute="leading" constant="30" id="sVZ-5u-Bof"/>
+                            <constraint firstItem="71V-9y-fI1" firstAttribute="leading" secondItem="dxe-O0-OS2" secondAttribute="leading" constant="30" id="tc3-gz-p8w"/>
+                            <constraint firstItem="dFb-JZ-dzR" firstAttribute="top" secondItem="IzC-pO-oOm" secondAttribute="bottom" constant="10" id="udL-z1-wrq"/>
                             <constraint firstItem="5ws-Mm-STE" firstAttribute="top" secondItem="dxe-O0-OS2" secondAttribute="top" id="vNa-yn-3jX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dxe-O0-OS2"/>
