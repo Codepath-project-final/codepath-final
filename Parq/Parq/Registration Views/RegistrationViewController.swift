@@ -33,7 +33,6 @@ class RegistrationViewController: UIViewController {
         confirmPasswordTextField.placeholder = "Confrim Password"
         firstNameTextField.placeholder = "First Name"
         lastNameTextField.placeholder = "Last Name"
-        print("got here 1")
         
         // Do any additional setup after loading the view.
     }
@@ -65,14 +64,14 @@ class RegistrationViewController: UIViewController {
                 alertController.addAction(OKAction)
             }
 
-        } else if usernameTextField.text == usernameTextField.text {
-            let alertController = UIAlertController(title: "Register Fail", message: "User Exist", preferredStyle: .alert)
-            
-            present(alertController, animated: true) {
-                let OKAction = UIAlertAction(title: "Dismiss", style: .default) { (action) in
-                }
-                alertController.addAction(OKAction)
-            }
+//        } else if usernameTextField.text == usernameTextField.text {
+//            let alertController = UIAlertController(title: "Register Fail", message: "User Exist", preferredStyle: .alert)
+//
+//            present(alertController, animated: true) {
+//                let OKAction = UIAlertAction(title: "Dismiss", style: .default) { (action) in
+//                }
+//                alertController.addAction(OKAction)
+//            }
         } else if (confirmPasswordTextField.text != passwordTextField.text) {
             let alertController = UIAlertController(title: "Register Fail", message: "Password not Match", preferredStyle: .alert)
             
@@ -94,6 +93,7 @@ class RegistrationViewController: UIViewController {
         var request = URLRequest(url:url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 10)
         request.httpMethod = "POST"
         let postString = "username=\(username!)&password=\(password!)&firstname=\(firstname!)&lastname=\(lastname!)&email=\(email!)"
+        print (username)
         request.httpBody = postString.data(using: .utf8)
         
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
