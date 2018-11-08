@@ -7,6 +7,8 @@ target 'Parq' do
 
   # Pods for Parq
   pod 'Parse'
+  pod 'Alamofire'
+  pod 'AlamofireImage'
 
   target 'ParqTests' do
     inherit! :search_paths

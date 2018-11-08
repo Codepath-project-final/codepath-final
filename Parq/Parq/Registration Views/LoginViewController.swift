@@ -10,6 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
+    static var userID: Int = 0;
     
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -64,12 +65,16 @@ class LoginViewController: UIViewController {
             
             if let data = data {
                 
-                let responseMessage = try! JSONSerialization.jsonObject(with: data, options: []) as! [String:String]
+                let responseMessage = try! JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
                 let status = (responseMessage["status"]) as! String
+                
+                
                 if status == "success" {
+                    let userID = (responseMessage["user_id"]) as! Int
                     LoginViewController.isLoggedIn = true;
                     self.performSegue(withIdentifier: "loginSegue", sender: nil)
                     print ("success")
+                    print(userID);
                     
                 }
                 else{

@@ -7,32 +7,90 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
-class newPostViewController: UIViewController {
-
+class newPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postDescripionLabel: UITextField!
     @IBOutlet weak var postLocationLabel: UITextField!
     @IBOutlet weak var postPriceLabel: UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    let picker = UIImagePickerController()
+    
 
-        // Do any additional setup after loading the view.
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    // Do any additional setup after loading the view.
+}
+
+func upload() {
+    
+    let imageData = UIImageJPEGRepresentation(postImage.image!, 0.1)
+    let newDate = Date()
+    
+    Alamofire.upload(multipartFormData: { (multipartFormData) in
+        multipartFormData.append(imageData!, withName: "imageName", fileName: "\(newDate).png", mimeType: "image/png")
+    }, to: "https://parkistan.herokuapp.com/upload")
+    { (result) in
+        switch result {
+        case .success(let upload, _,_ ):
+            
+            upload.uploadProgress(closure: { (Progress) in
+                print("Upload Progress: \(Progress.fractionCompleted)")
+            })
+            
+            upload.responseJSON { response in
+                //self.delegate?.showSuccessAlert()
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                //                        self.showSuccesAlert()
+                //self.removeImage(“frame”, fileExtension: “txt”)
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                }
+            }
+            
+        case .failure(let encodingError):
+            //self.delegate?.showFailAlert()
+            print(encodingError)
+        }
     }
     
-    @IBAction func postImageButton(_ sender: Any) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            
+            self.myImage.image = image
+            dismiss(animated:true, completion: nil)
+            
+        }
+        
+        let  imag = info[UIImagePickerController.InfoKey.referenceURL] as! NSURL
+        imageURL = imag.absoluteString!
+        
+        self.upload()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
     }
-    */
+    
+    
+    
+    @IBAction func shareButton(_ sender: Any) {
+        
+        
+        picker.delegate = self
+        picker.sourceType = UIImagePickerControllerSourceType.savedPhotosAlbum
+        self.present(picker, animated: true, completion: nil)
+    }
+    
+    
     
     @IBAction func shareButtonPress(_ sender: Any) {
     }
@@ -43,3 +101,5 @@ class newPostViewController: UIViewController {
     }
     
 }
+
+
