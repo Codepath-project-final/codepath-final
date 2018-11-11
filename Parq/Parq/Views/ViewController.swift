@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var unregisterSlideViewDisplay = false
     
     var posts: [[String: Any]] = []
+    var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         registeredSideView.layer.shadowRadius = 30
         unregisterSideView.layer.shadowOpacity = 1
         unregisterSideView.layer.shadowRadius = 30
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(ViewController.didPullToRefresh(_:)), for: .valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
+    }
+    
+    @objc func didPullToRefresh(_ refreshControl: UIRefreshControl) {
+        getData()
     }
     
     // show the sideView when press the Menu Icon
@@ -199,7 +208,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.posts = dataDictionary
                 print(self.posts)
                 self.tableView.reloadData()
-                
+                self.refreshControl.endRefreshing()
             }
         }
         
@@ -208,10 +217,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let cell = sender as! UITableViewCell
+        
         
         // prepare go to description view
         if (segue.identifier == "detailView") {
+            let cell = sender as! UITableViewCell
             if let indexPath = tableView.indexPath(for: cell){
                 let post = posts[indexPath.row]
                 let detailViewController = segue.destination as! DescriptionViewController
