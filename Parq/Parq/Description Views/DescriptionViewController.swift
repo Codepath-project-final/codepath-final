@@ -14,6 +14,9 @@ class DescriptionViewController: UIViewController{
     @IBOutlet weak var messageButton: UIButton!
     @IBOutlet weak var bookNowButton: UIButton!
     @IBOutlet weak var photoTableView: UIImageView!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
     
     var post : [String: Any]? = nil
     
@@ -27,10 +30,13 @@ class DescriptionViewController: UIViewController{
         if let post = post {
 
             descriptionLabel.text = post["post_description"] as! String?
+            locationLabel.text = post["location"] as! String?
+            priceLabel.text = post["post_price"] as! String?
             
             let imageUrl = post["imageURL"] as! String
             let url = URL(string: imageUrl)!
             photoTableView.af_setImage(withURL: url)
+
         }
     }
     

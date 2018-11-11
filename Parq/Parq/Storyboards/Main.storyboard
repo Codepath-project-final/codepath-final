@@ -185,7 +185,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zu0-XW-20X">
-                                <rect key="frame" x="20" y="74" width="335" height="20.5"/>
+                                <rect key="frame" x="20" y="84" width="335" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -205,25 +205,43 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JxS-Vq-wba">
-                                <rect key="frame" x="20" y="114.5" width="335" height="205"/>
+                                <rect key="frame" x="20" y="205.5" width="335" height="205"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="JxS-Vq-wba" secondAttribute="height" multiplier="49:30" id="ThN-WZ-pSd"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86O-fO-MW4">
+                                <rect key="frame" x="20" y="124.5" width="335" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67Z-Xs-YMR">
+                                <rect key="frame" x="20" y="165" width="335" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JxS-Vq-wba" firstAttribute="top" secondItem="zu0-XW-20X" secondAttribute="bottom" constant="20" id="0ei-u3-uJm"/>
                             <constraint firstItem="JxS-Vq-wba" firstAttribute="leading" secondItem="uvL-fM-qjG" secondAttribute="leading" constant="20" id="41M-sH-m0d"/>
+                            <constraint firstItem="86O-fO-MW4" firstAttribute="leading" secondItem="uvL-fM-qjG" secondAttribute="leading" constant="20" id="9tO-24-4S8"/>
+                            <constraint firstItem="uvL-fM-qjG" firstAttribute="trailing" secondItem="86O-fO-MW4" secondAttribute="trailing" constant="20" id="Bi7-MY-iym"/>
                             <constraint firstItem="JxS-Vq-wba" firstAttribute="centerX" secondItem="HOD-WU-3Jg" secondAttribute="centerX" id="DWO-YM-qO3"/>
+                            <constraint firstItem="JxS-Vq-wba" firstAttribute="top" secondItem="67Z-Xs-YMR" secondAttribute="bottom" constant="20" id="JNH-Zb-w9a"/>
                             <constraint firstItem="uvL-fM-qjG" firstAttribute="bottom" secondItem="XwU-Af-s9a" secondAttribute="bottom" constant="20" id="Lv5-uH-cki"/>
+                            <constraint firstItem="67Z-Xs-YMR" firstAttribute="top" secondItem="86O-fO-MW4" secondAttribute="bottom" constant="20" id="Mdb-jX-10t"/>
+                            <constraint firstItem="86O-fO-MW4" firstAttribute="top" secondItem="zu0-XW-20X" secondAttribute="bottom" constant="20" id="PDe-Cp-gFv"/>
                             <constraint firstItem="Gqz-Zx-Exv" firstAttribute="centerX" secondItem="HOD-WU-3Jg" secondAttribute="centerX" id="R3J-JM-zkF"/>
                             <constraint firstItem="XwU-Af-s9a" firstAttribute="centerX" secondItem="HOD-WU-3Jg" secondAttribute="centerX" id="Toa-fV-aKk"/>
                             <constraint firstItem="zu0-XW-20X" firstAttribute="leading" secondItem="uvL-fM-qjG" secondAttribute="leading" constant="20" id="V6o-9X-O7Y"/>
                             <constraint firstItem="uvL-fM-qjG" firstAttribute="trailing" secondItem="zu0-XW-20X" secondAttribute="trailing" constant="20" id="hko-A7-apI"/>
+                            <constraint firstItem="uvL-fM-qjG" firstAttribute="trailing" secondItem="67Z-Xs-YMR" secondAttribute="trailing" constant="20" id="i4p-ZO-5s5"/>
                             <constraint firstItem="uvL-fM-qjG" firstAttribute="trailing" secondItem="JxS-Vq-wba" secondAttribute="trailing" constant="20" id="ir2-MV-xRc"/>
+                            <constraint firstItem="67Z-Xs-YMR" firstAttribute="leading" secondItem="uvL-fM-qjG" secondAttribute="leading" constant="20" id="vyZ-cN-WGV"/>
                             <constraint firstItem="XwU-Af-s9a" firstAttribute="top" secondItem="Gqz-Zx-Exv" secondAttribute="bottom" constant="15" id="x1j-AX-VAC"/>
-                            <constraint firstItem="zu0-XW-20X" firstAttribute="top" secondItem="uvL-fM-qjG" secondAttribute="top" constant="10" id="yyb-03-S71"/>
+                            <constraint firstItem="zu0-XW-20X" firstAttribute="top" secondItem="uvL-fM-qjG" secondAttribute="top" constant="20" id="yyb-03-S71"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uvL-fM-qjG"/>
                     </view>
@@ -231,8 +249,10 @@
                     <connections>
                         <outlet property="bookNowButton" destination="XwU-Af-s9a" id="bVN-xU-fJo"/>
                         <outlet property="descriptionLabel" destination="zu0-XW-20X" id="EMx-Nm-tzo"/>
+                        <outlet property="locationLabel" destination="86O-fO-MW4" id="3as-Nc-SV4"/>
                         <outlet property="messageButton" destination="Gqz-Zx-Exv" id="Z4H-HU-TZO"/>
                         <outlet property="photoTableView" destination="JxS-Vq-wba" id="H63-wJ-pOK"/>
+                        <outlet property="priceLabel" destination="67Z-Xs-YMR" id="JkT-B2-Zga"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJn-Xt-0fY" userLabel="First Responder" sceneMemberID="firstResponder"/>
