@@ -328,7 +328,6 @@
                                         <barButtonItem key="rightBarButtonItem" title="Post" id="0Wk-lZ-LwI">
                                             <connections>
                                                 <action selector="post:" destination="L7p-BC-DJQ" id="YsJ-QM-vwj"/>
-                                                <segue destination="3S2-UM-mHs" kind="presentation" id="f8x-g9-Z76"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -418,6 +417,7 @@
                         <outlet property="postImage" destination="IzC-pO-oOm" id="fws-pJ-cVA"/>
                         <outlet property="postLocationLabel" destination="Gav-7o-gS8" id="6Ta-ro-Hri"/>
                         <outlet property="postPriceLabel" destination="R9j-N5-gEa" id="Exh-KP-04m"/>
+                        <segue destination="3S2-UM-mHs" kind="presentation" identifier="upload" id="ETh-P1-3uG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFm-wX-ZAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -819,6 +819,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="Qi3-8s-ssC"/>
         <segue reference="Fmo-dO-m7z"/>
-        <segue reference="f8x-g9-Z76"/>
+        <segue reference="ETh-P1-3uG"/>
     </inferredMetricsTieBreakers>
 </document>

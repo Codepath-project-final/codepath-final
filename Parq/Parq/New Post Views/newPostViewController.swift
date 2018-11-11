@@ -20,6 +20,7 @@ class newPostViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var postPriceLabel: UITextField!
     
     let picker = UIImagePickerController()
+    var alertController = UIAlertController()
     
 
 
@@ -71,10 +72,12 @@ func upload() {
                 }
                 
             }
+            self.performSegue(withIdentifier: "upload", sender: self)
             
         case .failure(let encodingError):
             //self.delegate?.showFailAlert()
             print(encodingError)
+            
         }
     }
     }
@@ -105,8 +108,62 @@ func upload() {
     
     
     @IBAction func post(_ sender: Any) {
-        
-        self.upload()
+        if (postImage.image == nil) {
+            // There was a problem, check postImage
+            self.alertController = UIAlertController(title: "Error", message: "No image", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Ok", style: .cancel) { (action) in
+                // handle cancel response here. Doing nothing will dismiss the view.
+            }
+            self.alertController.addAction(cancelAction)
+            DispatchQueue.global().async(execute: {
+                DispatchQueue.main.sync{
+                    self.present(self.alertController, animated: true, completion: nil)
+                    
+                }
+            })
+        } else if (postDescriptionLabel.text == nil) {
+            // There was a problem, check error.description
+            self.alertController = UIAlertController(title: "Error", message: "No description", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Ok", style: .cancel) { (action) in
+                // handle cancel response here. Doing nothing will dismiss the view.
+            }
+            self.alertController.addAction(cancelAction)
+            DispatchQueue.global().async(execute: {
+                DispatchQueue.main.sync{
+                    self.present(self.alertController, animated: true, completion: nil)
+                    
+                }
+            })
+        } else if (postLocationLabel.text == nil) {
+            // There was a problem, check error.description
+            self.alertController = UIAlertController(title: "Error", message: "No location", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Ok", style: .cancel) { (action) in
+                // handle cancel response here. Doing nothing will dismiss the view.
+            }
+            self.alertController.addAction(cancelAction)
+            DispatchQueue.global().async(execute: {
+                DispatchQueue.main.sync{
+                    self.present(self.alertController, animated: true, completion: nil)
+                    
+                }
+            })
+        } else if (postPriceLabel.text == nil) {
+            // There was a problem, check error.description
+            self.alertController = UIAlertController(title: "Error", message: "No price", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Ok", style: .cancel) { (action) in
+                // handle cancel response here. Doing nothing will dismiss the view.
+            }
+            self.alertController.addAction(cancelAction)
+            DispatchQueue.global().async(execute: {
+                DispatchQueue.main.sync{
+                    self.present(self.alertController, animated: true, completion: nil)
+                    
+                }
+            })
+        } else {
+            // upload success
+            self.upload()
+        }
     }
     
     
