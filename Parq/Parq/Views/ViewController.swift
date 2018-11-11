@@ -110,6 +110,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         else {
             
              cell.descriptionLabel.text! = post["post_description"] as! String
+             cell.priceLabel.text! = post["post_price"] as! String 
         }
         
         

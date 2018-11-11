@@ -107,8 +107,6 @@ func upload() {
     @IBAction func post(_ sender: Any) {
         
         self.upload()
-
-        
     }
     
     
