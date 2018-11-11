@@ -10,19 +10,19 @@ import UIKit
 
 class DescriptionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
-    @IBOutlet weak var photoTableView: UITableView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var messageButton: UIButton!
     @IBOutlet weak var bookNowButton: UIButton!
+    @IBOutlet weak var photoTableView: UIImageView!
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        photoTableView.rowHeight = 120
-        photoTableView.dataSource = self
-        photoTableView.delegate = self
+       
     }
     
 
@@ -36,5 +36,7 @@ class DescriptionViewController: UIViewController, UITableViewDataSource, UITabl
         
         return cell
     }
+    
+   
 
 }

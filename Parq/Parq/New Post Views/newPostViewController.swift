@@ -13,7 +13,9 @@ import AlamofireImage
 class newPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var postImage: UIImageView!
-    @IBOutlet weak var postDescripionLabel: UITextField!
+    
+    @IBOutlet weak var postDescriptionLabel: UITextField!
+    
     @IBOutlet weak var postLocationLabel: UITextField!
     @IBOutlet weak var postPriceLabel: UITextField!
     
@@ -23,17 +25,30 @@ class newPostViewController: UIViewController, UIImagePickerControllerDelegate, 
 
 override func viewDidLoad() {
     super.viewDidLoad()
+    picker.delegate = self
+    picker.sourceType = UIImagePickerController.SourceType.savedPhotosAlbum
     
     // Do any additional setup after loading the view.
 }
 
 func upload() {
     
-    let imageData = UIImageJPEGRepresentation(postImage.image!, 0.1)
+    let imageData = postImage.image!.pngData()
     let newDate = Date()
     
+    let user_id = String(LoginViewController.userID)
+    
+    let parameters = ["description": postDescriptionLabel.text!, "location" : postLocationLabel.text!, "price" : postPriceLabel.text!,
+                      "user_id": user_id] as! [String: String]
+    
     Alamofire.upload(multipartFormData: { (multipartFormData) in
-        multipartFormData.append(imageData!, withName: "imageName", fileName: "\(newDate).png", mimeType: "image/png")
+        
+
+        for (key,value) in parameters {
+            multipartFormData.append((value as! String).data(using: .utf8)!, withName: key)
+        }
+        
+        multipartFormData.append(imageData!, withName: "image", fileName: "\(newDate).png", mimeType: "image/png")
     }, to: "https://parkistan.herokuapp.com/upload")
     { (result) in
         switch result {
@@ -54,6 +69,7 @@ func upload() {
                 if let JSON = response.result.value {
                     print("JSON: \(JSON)")
                 }
+                
             }
             
         case .failure(let encodingError):
@@ -61,39 +77,42 @@ func upload() {
             print(encodingError)
         }
     }
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             
-            self.myImage.image = image
+            self.postImage.image = image
             dismiss(animated:true, completion: nil)
             
         }
         
-        let  imag = info[UIImagePickerController.InfoKey.referenceURL] as! NSURL
-        imageURL = imag.absoluteString!
+    }
+    
+    
+    
+    
+    
+    @IBAction func photoPicker(_ sender: Any) {
+        
+
+        self.present(picker, animated: true, completion: nil)
+        
+        
+    }
+    
+    
+    
+    @IBAction func post(_ sender: Any) {
         
         self.upload()
-    }
-    
-    
-    }
-    
-    
-    
-    @IBAction func shareButton(_ sender: Any) {
+
         
-        
-        picker.delegate = self
-        picker.sourceType = UIImagePickerControllerSourceType.savedPhotosAlbum
-        self.present(picker, animated: true, completion: nil)
     }
     
     
-    
-    @IBAction func shareButtonPress(_ sender: Any) {
-    }
+  
     
     
     @IBAction func cancelButtonPress(_ sender: Any) {

@@ -10,6 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
+    
     static var userID: Int = 0;
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -36,8 +37,8 @@ class LoginViewController: UIViewController {
         
         if usernameTextField.text == "" || passwordTextField.text == ""{
             let alertController = UIAlertController(title: "Login Fail", message:
-                "Username or Password Missing", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                "Username or Password Missing", preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default,handler: nil))
             
             self.present(alertController, animated: true, completion: nil)
         }
@@ -72,6 +73,7 @@ class LoginViewController: UIViewController {
                 if status == "success" {
                     let userID = (responseMessage["user_id"]) as! Int
                     LoginViewController.isLoggedIn = true;
+                    LoginViewController.userID = userID;
                     self.performSegue(withIdentifier: "loginSegue", sender: nil)
                     print ("success")
                     print(userID);
@@ -80,8 +82,8 @@ class LoginViewController: UIViewController {
                 else{
                     print ("denied")
                     let alertController = UIAlertController(title: "Login Fail", message:
-                        "Username or Password Incorrect", preferredStyle: UIAlertControllerStyle.alert)
-                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                        "Username or Password Incorrect", preferredStyle: UIAlertController.Style.alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default,handler: nil))
                     
                     self.present(alertController, animated: true, completion: nil)
                 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3S2-UM-mHs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3S2-UM-mHs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -224,6 +224,7 @@
                         <outlet property="bookNowButton" destination="XwU-Af-s9a" id="bVN-xU-fJo"/>
                         <outlet property="descriptionLabel" destination="zu0-XW-20X" id="EMx-Nm-tzo"/>
                         <outlet property="messageButton" destination="Gqz-Zx-Exv" id="Z4H-HU-TZO"/>
+                        <outlet property="photoTableView" destination="JxS-Vq-wba" id="H63-wJ-pOK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJn-Xt-0fY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -326,15 +327,14 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Post" id="0Wk-lZ-LwI">
                                             <connections>
-                                                <action selector="shareButton:" destination="L7p-BC-DJQ" id="0n2-0T-I0D"/>
+                                                <action selector="post:" destination="L7p-BC-DJQ" id="YsJ-QM-vwj"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IzC-pO-oOm">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IzC-pO-oOm">
                                 <rect key="frame" x="30" y="94" width="315" height="150"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="8R7-vF-yIC"/>
                                 </constraints>
@@ -343,7 +343,7 @@
                                 <rect key="frame" x="130" y="254" width="115" height="30"/>
                                 <state key="normal" title="Add a Photo"/>
                                 <connections>
-                                    <action selector="postImageButton:" destination="L7p-BC-DJQ" eventType="touchUpInside" id="TeN-FE-wMp"/>
+                                    <action selector="photoPicker:" destination="L7p-BC-DJQ" eventType="touchUpInside" id="wBa-WP-FUB"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter new post description here:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wb9-AJ-v32">
@@ -413,11 +413,10 @@
                         <viewLayoutGuide key="safeArea" id="dxe-O0-OS2"/>
                     </view>
                     <connections>
-                        <outlet property="postDescripionLabel" destination="Wb9-AJ-v32" id="j0Y-qV-6iv"/>
+                        <outlet property="postDescriptionLabel" destination="Wb9-AJ-v32" id="XIY-Aq-hNU"/>
                         <outlet property="postImage" destination="IzC-pO-oOm" id="fws-pJ-cVA"/>
                         <outlet property="postLocationLabel" destination="Gav-7o-gS8" id="6Ta-ro-Hri"/>
                         <outlet property="postPriceLabel" destination="R9j-N5-gEa" id="Exh-KP-04m"/>
-                        <outlet property="shareButton" destination="0Wk-lZ-LwI" id="HdL-8N-VNb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFm-wX-ZAc" userLabel="First Responder" sceneMemberID="firstResponder"/>

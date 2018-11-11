@@ -24,8 +24,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loginUser("ramesh", "khan")
+        //self.loginUser("ramesh", "khan")
         //print("here")
+        self.getData()
         tableView.rowHeight = 160
         tableView.dataSource = self
         tableView.delegate = self
@@ -92,14 +93,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return posts.count
-        return 10
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
-       
-        cell.descriptionLabel.text! = "The fuck is this"
-        cell.locationLabel.text! = "mars"
+        
+        let post = posts[indexPath.row]
+        
+        if let description = post["post_description"] as? NSNull {
+            // don't create the object, 'cuz we can't have a Repository without an id
+            cell.descriptionLabel.text! = "null"
+
+        }
+
+        else {
+            
+             cell.descriptionLabel.text! = post["post_description"] as! String
+        }
+        
+        
+        if let location = post["location"] as? NSNull {
+            
+            cell.locationLabel.text! = "null"
+        }
+        else {
+            
+            cell.locationLabel.text! = post["location"] as! String
+        }
+        
+        let imageUrl = post["imageURL"] as! String
+        let url = URL(string: imageUrl)!
+        cell.photoImage.af_setImage(withURL: url)
+        
         return cell
     }
 
@@ -147,5 +173,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         task.resume()
     }
+    
+    func getData() {
+        
+        let url = URL(string: "https://parkistan.herokuapp.com/posts")!
+        
+        let request = URLRequest(url:url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 10)
+        
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        
+        let task = session.dataTask(with: request) {
+            
+            (data, response, error) in
+            
+            if let error = error {
+                
+                print(error.localizedDescription)
+            }
+                
+            else if let data = data {
+                
+                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
+                
+                self.posts = dataDictionary
+                print(self.posts)
+                self.tableView.reloadData()
+                
+            }
+        }
+        
+        task.resume()
+        
+    }
+    
+    
 }
 
