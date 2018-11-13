@@ -11,11 +11,27 @@ import UIKit
 class ConfirmViewController: UIViewController {
     
     @IBOutlet weak var confirmTextView: UITextView!
-
+    
+    var post : [String: Any]? = nil
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let post = post {
+            
+            descriptionLabel.text = post["post_description"] as! String?
+            locationLabel.text = post["location"] as! String?
+            //priceLabel.text = post["post_price"] as! String?
+            
+            
+        }
     }
     
     @IBAction func tapConfirm(_ sender: Any) {

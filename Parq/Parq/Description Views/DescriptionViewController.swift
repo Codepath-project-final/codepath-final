@@ -39,7 +39,15 @@ class DescriptionViewController: UIViewController{
 
         }
     }
-    
-   
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ 
+        // prepare go to confirm view
+        if (segue.identifier == "confirmButton") {
+                let post = self.post
+                let confirmViewController = segue.destination as! ConfirmViewController
+                confirmViewController.post = post
+        }
+    }
+    
 }
