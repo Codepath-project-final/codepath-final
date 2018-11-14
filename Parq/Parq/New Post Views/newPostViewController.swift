@@ -19,6 +19,9 @@ class newPostViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var postLocationLabel: UITextField!
     @IBOutlet weak var postPriceLabel: UITextField!
     
+    
+    @IBOutlet weak var postPhoneLabel: UITextField!
+    
     let picker = UIImagePickerController()
     var alertController = UIAlertController()
     
@@ -40,7 +43,7 @@ func upload() {
     let user_id = String(LoginViewController.userID)
     
     let parameters = ["description": postDescriptionLabel.text!, "location" : postLocationLabel.text!, "price" : postPriceLabel.text!,
-                      "user_id": user_id] as! [String: String]
+                      "user_id": user_id, "phone": postPhoneLabel.text!] as! [String: String]
     
     Alamofire.upload(multipartFormData: { (multipartFormData) in
         
