@@ -209,7 +209,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                 <state key="normal" title="Book Now"/>
                                 <connections>
-                                    <segue destination="8Qc-tr-YJO" kind="show" identifier="confirmButton" id="34a-WT-j2e"/>
+                                    <action selector="bookPress:" destination="UsE-w8-aTd" eventType="touchUpInside" id="fWj-nO-J6c"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86O-fO-MW4">
@@ -285,6 +285,8 @@
                         <outlet property="locationLabel" destination="86O-fO-MW4" id="3as-Nc-SV4"/>
                         <outlet property="photoTableView" destination="JxS-Vq-wba" id="H63-wJ-pOK"/>
                         <outlet property="priceLabel" destination="67Z-Xs-YMR" id="JkT-B2-Zga"/>
+                        <segue destination="8Qc-tr-YJO" kind="presentation" identifier="confirmButton" id="aqU-dp-e1E"/>
+                        <segue destination="Q80-Lr-tSD" kind="show" identifier="registerPage" id="3Z7-6A-FH5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJn-Xt-0fY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -444,55 +446,55 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JR-3q-wrp">
-                                <rect key="frame" x="20" y="352" width="335" height="25.5"/>
+                                <rect key="frame" x="20" y="308" width="335" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner's Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnH-cL-Dso">
-                                <rect key="frame" x="20" y="185" width="335" height="25.5"/>
+                                <rect key="frame" x="20" y="141" width="335" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123-456-7890" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZc-AT-86K">
-                                <rect key="frame" x="20" y="268.5" width="335" height="26"/>
+                                <rect key="frame" x="20" y="224.5" width="335" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4M-wX-J7D">
-                                <rect key="frame" x="60" y="94" width="255" height="33.5"/>
+                                <rect key="frame" x="60" y="50" width="255" height="33.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner's Name:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmG-gQ-Fry">
-                                <rect key="frame" x="20" y="147.5" width="335" height="27.5"/>
+                                <rect key="frame" x="20" y="103.5" width="335" height="27.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8WV-9n-IP9">
-                                <rect key="frame" x="20" y="230.5" width="335" height="28"/>
+                                <rect key="frame" x="20" y="186.5" width="335" height="28"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSp-Pe-VQe">
-                                <rect key="frame" x="20" y="314.5" width="335" height="27.5"/>
+                                <rect key="frame" x="20" y="270.5" width="335" height="27.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcB-xy-EXh">
-                                <rect key="frame" x="20" y="397.5" width="335" height="27.5"/>
+                                <rect key="frame" x="20" y="353.5" width="335" height="27.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ob-aT-bou">
-                                <rect key="frame" x="20" y="445" width="335" height="25.5"/>
+                                <rect key="frame" x="20" y="401" width="335" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -866,7 +868,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Qi3-8s-ssC"/>
-        <segue reference="Fmo-dO-m7z"/>
+        <segue reference="3Z7-6A-FH5"/>
         <segue reference="Cko-ju-oEN"/>
     </inferredMetricsTieBreakers>
 </document>

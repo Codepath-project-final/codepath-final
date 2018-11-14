@@ -11,7 +11,6 @@ import UIKit
 class DescriptionViewController: UIViewController{
 
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var messageButton: UIButton!
     @IBOutlet weak var bookNowButton: UIButton!
     @IBOutlet weak var photoTableView: UIImageView!
     @IBOutlet weak var locationLabel: UILabel!
@@ -39,6 +38,15 @@ class DescriptionViewController: UIViewController{
 
         }
     }
+    
+    @IBAction func bookPress(_ sender: Any) {
+        if LoginViewController.isLoggedIn {
+            performSegue(withIdentifier: "confirmButton", sender: self)
+        } else {
+            performSegue(withIdentifier: "registerPage", sender: self)
+        }
+    }
+    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
  
