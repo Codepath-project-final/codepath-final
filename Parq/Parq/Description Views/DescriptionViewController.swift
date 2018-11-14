@@ -31,7 +31,7 @@ class DescriptionViewController: UIViewController{
 
             descriptionLabel.text = post["post_description"] as! String?
             locationLabel.text = post["location"] as! String?
-            priceLabel.text = post["post_price"] as! String?
+            priceLabel.text = "$\(post["post_price"] as! String)"
             
             let imageUrl = post["imageURL"] as! String
             let url = URL(string: imageUrl)!

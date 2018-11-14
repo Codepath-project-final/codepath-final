@@ -163,6 +163,19 @@ func upload() {
                     
                 }
             })
+        } else if (postPhoneLabel.text == nil) {
+            // There was a problem, check error.description
+            self.alertController = UIAlertController(title: "Error", message: "No phoneNumber", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Ok", style: .cancel) { (action) in
+                // handle cancel response here. Doing nothing will dismiss the view.
+            }
+            self.alertController.addAction(cancelAction)
+            DispatchQueue.global().async(execute: {
+                DispatchQueue.main.sync{
+                    self.present(self.alertController, animated: true, completion: nil)
+                    
+                }
+            })
         } else {
             // upload success
             self.upload()

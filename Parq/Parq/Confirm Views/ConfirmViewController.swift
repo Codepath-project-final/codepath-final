@@ -28,7 +28,7 @@ class ConfirmViewController: UIViewController {
             
             descriptionLabel.text = post["post_description"] as! String?
             locationLabel.text = post["location"] as! String?
-            //priceLabel.text = post["post_price"] as! String?
+            phoneNumberLabel.text = post["phone"] as! String?
             
             
         }
