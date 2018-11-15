@@ -1,11 +1,3 @@
-//
-//  ConfirmViewController.swift
-//  Parq
-//
-//  Created by Jangey Lu on 10/12/18.
-//  Copyright © 2018 CodePath. All rights reserved.
-//
-
 import UIKit
 
 class ConfirmViewController: UIViewController {
@@ -23,29 +15,17 @@ class ConfirmViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         if let post = post {
             
+            let uid = post["user_id"] as! Int
+            usernameLabel.text = String(uid)
             descriptionLabel.text = post["post_description"] as! String?
             locationLabel.text = post["location"] as! String?
             phoneNumberLabel.text = post["phone"] as! String?
-            
-            
         }
     }
     
     @IBAction func tapConfirm(_ sender: Any) {
         performSegue(withIdentifier: "BackToMainPage", sender: self)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
