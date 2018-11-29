@@ -499,9 +499,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A confirmation has been sent to your phone via text message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaR-dF-Jmn">
+                                <rect key="frame" x="20" y="446.5" width="335" height="50.5"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.78695458169999999" green="0.89003807310000005" blue="0.9996612668" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="FaR-dF-Jmn" firstAttribute="leading" secondItem="wQB-yg-nBi" secondAttribute="leading" constant="20" id="1Lx-2z-FUV"/>
                             <constraint firstItem="wQB-yg-nBi" firstAttribute="trailing" secondItem="vmG-gQ-Fry" secondAttribute="trailing" constant="20" id="2AW-R5-6sN"/>
                             <constraint firstItem="wQB-yg-nBi" firstAttribute="trailing" secondItem="cSp-Pe-VQe" secondAttribute="trailing" constant="20" id="A7r-PF-6mH"/>
                             <constraint firstItem="T4M-wX-J7D" firstAttribute="leading" secondItem="wQB-yg-nBi" secondAttribute="leading" constant="60" id="C3c-qr-qVl"/>
@@ -514,7 +521,9 @@
                             <constraint firstItem="wQB-yg-nBi" firstAttribute="trailing" secondItem="BnH-cL-Dso" secondAttribute="trailing" constant="20" id="SGv-jB-cyk"/>
                             <constraint firstItem="cSp-Pe-VQe" firstAttribute="top" secondItem="YZc-AT-86K" secondAttribute="bottom" constant="20" id="TT3-6j-dKJ"/>
                             <constraint firstItem="wQB-yg-nBi" firstAttribute="trailing" secondItem="T4M-wX-J7D" secondAttribute="trailing" constant="60" id="UQI-ye-qin"/>
+                            <constraint firstAttribute="trailing" secondItem="FaR-dF-Jmn" secondAttribute="trailing" constant="20" id="UzX-je-Tj8"/>
                             <constraint firstItem="YZc-AT-86K" firstAttribute="top" secondItem="8WV-9n-IP9" secondAttribute="bottom" constant="10" id="WsN-oW-i2U"/>
+                            <constraint firstItem="FaR-dF-Jmn" firstAttribute="top" secondItem="1Ob-aT-bou" secondAttribute="bottom" constant="20" id="Xqm-zp-Ij7"/>
                             <constraint firstItem="wQB-yg-nBi" firstAttribute="trailing" secondItem="YcB-xy-EXh" secondAttribute="trailing" constant="20" id="dCd-Zp-RPi"/>
                             <constraint firstItem="YZc-AT-86K" firstAttribute="leading" secondItem="wQB-yg-nBi" secondAttribute="leading" constant="20" id="gKd-f5-XHl"/>
                             <constraint firstItem="pTT-oY-iCd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1Ob-aT-bou" secondAttribute="bottom" constant="10" id="hl6-tz-f55"/>
@@ -869,6 +878,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="Qi3-8s-ssC"/>
         <segue reference="Fmo-dO-m7z"/>
-        <segue reference="Cko-ju-oEN"/>
+        <segue reference="FLg-Wr-wEh"/>
     </inferredMetricsTieBreakers>
 </document>
